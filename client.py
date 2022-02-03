@@ -57,8 +57,8 @@ def receive_in_bg(sock, user):
 if args.listen:
     print("\n[CAESAR] Running in listen mode...")
     conn = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    # In this case, using "dest_port" as the port to listen on instead
-    conn.bind(('localhost', dest_port))
+    # In this case, using "dest_ip" and "dest_port" as the ip and port to listen on instead
+    conn.bind((dest_ip, dest_port))
     print("[CAESAR] Listening on port " + str(dest_port))
     conn.listen(1)
     conn, addr = conn.accept()
